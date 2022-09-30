@@ -41,12 +41,20 @@ namespace TuTorial
             driver.Url = ("https://www.rahulshettyacademy.com/loginpagePractise/");
             LoginPage loginpage = new LoginPage(getdriver());
 
+            ProductsPage productpage = new ProductsPage(getdriver());
+
+            Checkoutpage check = new Checkoutpage(getdriver());
+
+            ConfirmationPage confirm = new ConfirmationPage(getdriver());
+
+               
             ////driver.FindElement(By.XPath("//input[@name='username']")).SendKeys("rahulshettyacademy");
             //loginpage.getusername().SendKeys("rahulshettyacademy");
             ////driver.FindElement(By.XPath("//input[@name='password'][1]")).SendKeys("learning");
             //loginpage.getpasword().SendKeys("learning");
             //driver.FindElement(By.XPath("//input[@type='checkbox'][1]")).Click();
-           ProductsPage productpage= loginpage.ValidLogin("rahulshettyacademy", "learning");
+            /* ProductsPage productpage=*/
+                                         loginpage.ValidLogin("rahulshettyacademy", "learning");
 
 
             IWebElement dropdown = driver.FindElement(By.XPath("//select[@class='form-control']"));
@@ -73,16 +81,18 @@ namespace TuTorial
             //IList<IWebElement> products = driver.FindElements(By.TagName("app-card"));
             foreach( IWebElement product in products)
             {
-            //    if(expectedproducts.Contains(product.FindElement(By.CssSelector(".card-title a")).Text))
-            //    {
-            //        product.FindElement(By.CssSelector(".card-footer")).Click();
-            //    }
+              if(expectedproducts.Contains(product.FindElement(By.CssSelector(".card-title a")).Text))
+                {
+                    product.FindElement(productpage.getcardfooter()).Click();
+
+                   
+                }
 
 
-        }
-        driver.FindElement(By.XPath("//a[@class='nav-link btn btn-primary']")).Click();
+            }
+            productpage.Getcheckout().Click();
 
-            IList<IWebElement> checkoutcards = driver.FindElements(By.XPath("//h4/a"));
+            IList<IWebElement> checkoutcards = check.getout();
 
 
                for (int i = 0; i < checkoutcards.Count; i++)
@@ -92,19 +102,19 @@ namespace TuTorial
 
             Assert.AreEqual(expectedproducts, actualproducts);
 
-            driver.FindElement(By.CssSelector(".btn-success")).Click();
+           check.getsuccess().Click();
 
-            driver.FindElement(By.XPath("//input[@id='country']")).SendKeys("ind");
+            confirm.getcountry().SendKeys("ind");
 
             WebDriverWait wait4 = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             wait4.Until(ExpectedConditions.ElementToBeClickable(By.LinkText("India")));
 
-            driver.FindElement(By.LinkText("India")).Click();
+            confirm.getcountryclick().Click();
 
-            driver.FindElement(By.XPath("//label[@for='checkbox2']")).Click();
+           confirm.getagree().Click();
 
 
-            driver.FindElement(By.CssSelector(".btn-success")).Click();
+            confirm.Getsuccessmsg().Click();
 
             string word = driver.FindElement(By.CssSelector(".alert-success")).Text;
 

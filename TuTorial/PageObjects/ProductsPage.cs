@@ -8,18 +8,13 @@ using System.Threading.Tasks;
 
 namespace TuTorial.PageObjects
 {
-//    IList<IWebElement> products = driver.FindElements(By.TagName("app-card"));
-//            foreach(IWebElement product in products)
-//            {
-//                if(expectedproducts.Contains(product.FindElement(By.CssSelector(".card-title a")).Text))
-//                {
-//                    product.FindElement(By.CssSelector(".card-footer")).Click();
-//}
+
 
  public class ProductsPage
     {
         private IWebDriver driver;
-        By cardtitle = By.CssSelector(".card - title a");
+        By cardtitle = By.CssSelector(".card-title a");
+         By addtocard = By.CssSelector(".card-footer");
 
         public ProductsPage (IWebDriver driver)
         {
@@ -27,12 +22,10 @@ namespace TuTorial.PageObjects
             PageFactory.InitElements(driver, this);
         }
 
-        public ProductsPage()
-        {
-        }
-
+        
         [FindsBy(How = How.TagName, Using = "app-card")]
         private IList<IWebElement> cards;
+
 
         public IList<IWebElement> getcards()
         {
@@ -42,6 +35,19 @@ namespace TuTorial.PageObjects
         public By getcardtitle()
         {
             return cardtitle;
+        }
+
+
+        public By getcardfooter()
+        {
+            return addtocard;
+        }
+        [FindsBy(How = How.XPath, Using = "//a[@class='nav-link btn btn-primary']")]
+        private IWebElement checkout;
+
+            public IWebElement Getcheckout()
+        {
+            return checkout;
         }
 
     }

@@ -39,13 +39,13 @@ namespace TuTorial.PageObjects
 
 
 
-        public ProductsPage ValidLogin(string user,string pass)
+        public void ValidLogin(string user,string pass)
         {
             username.SendKeys(user);
             password.SendKeys(pass);
             Checkbox.Click();
             Signin.Click();
-             return new ProductsPage();
+           //return new ProductsPage();
         }
         public IWebElement getpasword()
         {
