@@ -10,24 +10,26 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
+using TuTorial.PageObjects;
+using TuTorial.utilities;
 using WebDriverManager.DriverConfigs.Impl;
 
 
 namespace TuTorial
 {
-    class EndToEnd
+    class EndToEnd : Base
     {
-        IWebDriver driver;
-        [SetUp]
-        public void Setup()
-        {
+        //IWebDriver driver;
+        //[SetUp]
+        //public void Setup()
+        //{
 
-            new WebDriverManager.DriverManager().SetUpDriver(new FirefoxConfig());
-            driver = new FirefoxDriver();
+        //    new WebDriverManager.DriverManager().SetUpDriver(new FirefoxConfig());
+        //    driver = new FirefoxDriver();
 
-            driver.Manage().Window.Maximize();
+        //    driver.Manage().Window.Maximize();
 
-        }
+        //}
         [Test]
         public void Test1()
         {
@@ -37,10 +39,14 @@ namespace TuTorial
 
 
             driver.Url = ("https://www.rahulshettyacademy.com/loginpagePractise/");
+            LoginPage loginpage = new LoginPage(getdriver());
 
-            driver.FindElement(By.XPath("//input[@name='username']")).SendKeys("rahulshettyacademy");
-            driver.FindElement(By.XPath("//input[@name='password'][1]")).SendKeys("learning");
-            driver.FindElement(By.XPath("//input[@type='checkbox'][1]")).Click();
+            ////driver.FindElement(By.XPath("//input[@name='username']")).SendKeys("rahulshettyacademy");
+            //loginpage.getusername().SendKeys("rahulshettyacademy");
+            ////driver.FindElement(By.XPath("//input[@name='password'][1]")).SendKeys("learning");
+            //loginpage.getpasword().SendKeys("learning");
+            //driver.FindElement(By.XPath("//input[@type='checkbox'][1]")).Click();
+           ProductsPage productpage= loginpage.ValidLogin("rahulshettyacademy", "learning");
 
 
             IWebElement dropdown = driver.FindElement(By.XPath("//select[@class='form-control']"));
@@ -57,23 +63,24 @@ namespace TuTorial
                     rdos.Click();
                 }
             }
-            driver.FindElement(By.CssSelector("input[name=signin]")).Click();
+            //driver.FindElement(By.CssSelector("input[name=signin]")).Click();
             Thread.Sleep(3000);
             IWebElement framescroll = driver.FindElement(By.XPath("//button[@class='btn btn-info'][1]"));
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
             js.ExecuteScript("arguments[0].scrollIntoView(true);", framescroll);
 
-            IList<IWebElement> products = driver.FindElements(By.TagName("app-card"));
+            IList<IWebElement> products = productpage.getcards();
+            //IList<IWebElement> products = driver.FindElements(By.TagName("app-card"));
             foreach( IWebElement product in products)
             {
-                if(expectedproducts.Contains(product.FindElement(By.CssSelector(".card-title a")).Text))
-                {
-                    product.FindElement(By.CssSelector(".card-footer")).Click();
-                }
+            //    if(expectedproducts.Contains(product.FindElement(By.CssSelector(".card-title a")).Text))
+            //    {
+            //        product.FindElement(By.CssSelector(".card-footer")).Click();
+            //    }
 
-                
-            }
-            driver.FindElement(By.XPath("//a[@class='nav-link btn btn-primary']")).Click();
+
+        }
+        driver.FindElement(By.XPath("//a[@class='nav-link btn btn-primary']")).Click();
 
             IList<IWebElement> checkoutcards = driver.FindElements(By.XPath("//h4/a"));
 
