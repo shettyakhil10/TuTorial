@@ -13,7 +13,7 @@ using WebDriverManager.DriverConfigs.Impl;
 
 namespace TuTorial.utilities
 {
-    public class Base
+    public class Base:Json_reader
     {
         public IWebDriver driver;
 
@@ -66,11 +66,18 @@ namespace TuTorial.utilities
             }
         }
 
-          //  [TearDown]
-           //// public void Teardown()
-           // {
-           //     driver.Quit();
-           // }
+      
+       public static Json_reader GetdataParser()
+        {
+            return new Json_reader();
         }
+
+        [TearDown]
+        public void Teardown()
+        {
+                driver.Quit();
+            
+        }
+}
     }
 

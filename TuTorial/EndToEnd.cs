@@ -30,11 +30,14 @@ namespace TuTorial
         //    driver.Manage().Window.Maximize();
 
         //}
-        [Test]
-        public void Test1()
+        //[TestCase("rahulshettyacademy", "learning")]
+        // [TestCase("rahulshett", "learning")]
+
+        [Test, TestCaseSource("Addconfig")]
+        public void Test1(string username, string password,string [] expectedproducts)
         {
 
-       string [] expectedproducts = {"iphone X", "Blackberry" };
+            //string[] expectedproducts = { "iphone X", "Blackberry" };
             string[] actualproducts = new string[2];
 
 
@@ -47,18 +50,20 @@ namespace TuTorial
 
             ConfirmationPage confirm = new ConfirmationPage(getdriver());
 
-               
+            Json_reader json = new Json_reader();
+
+
             ////driver.FindElement(By.XPath("//input[@name='username']")).SendKeys("rahulshettyacademy");
             //loginpage.getusername().SendKeys("rahulshettyacademy");
             ////driver.FindElement(By.XPath("//input[@name='password'][1]")).SendKeys("learning");
             //loginpage.getpasword().SendKeys("learning");
             //driver.FindElement(By.XPath("//input[@type='checkbox'][1]")).Click();
             /* ProductsPage productpage=*/
-                                         loginpage.ValidLogin("rahulshettyacademy", "learning");
+            loginpage.ValidLogin(username, password);
 
 
             IWebElement dropdown = driver.FindElement(By.XPath("//select[@class='form-control']"));
-            SelectElement s = new SelectElement(dropdown);
+            SelectElement s = new(dropdown);
             s.SelectByValue("consult");
 
             IList<IWebElement> radiobutton = driver.FindElements(By.XPath("//input[@value='admin']"));
@@ -79,13 +84,13 @@ namespace TuTorial
 
             IList<IWebElement> products = productpage.getcards();
             //IList<IWebElement> products = driver.FindElements(By.TagName("app-card"));
-            foreach( IWebElement product in products)
+            foreach (IWebElement product in products)
             {
-              if(expectedproducts.Contains(product.FindElement(By.CssSelector(".card-title a")).Text))
+                if (expectedproducts.Contains(product.FindElement(By.CssSelector(".card-title a")).Text))
                 {
                     product.FindElement(productpage.getcardfooter()).Click();
 
-                   
+
                 }
 
 
@@ -95,14 +100,14 @@ namespace TuTorial
             IList<IWebElement> checkoutcards = check.getout();
 
 
-               for (int i = 0; i < checkoutcards.Count; i++)
+            for (int i = 0; i < checkoutcards.Count; i++)
             {
                 actualproducts[i] = checkoutcards[i].Text;
             }
 
             Assert.AreEqual(expectedproducts, actualproducts);
 
-           check.getsuccess().Click();
+            check.getsuccess().Click();
 
             confirm.getcountry().SendKeys("ind");
 
@@ -111,20 +116,34 @@ namespace TuTorial
 
             confirm.getcountryclick().Click();
 
-           confirm.getagree().Click();
+            confirm.getagree().Click();
 
 
             confirm.Getsuccessmsg().Click();
 
             string word = driver.FindElement(By.CssSelector(".alert-success")).Text;
 
-            StringAssert.Contains("Success",word);
+            StringAssert.Contains("Success", word);
 
 
 
 
 
 
+
+        }
+        public static IEnumerable<TestCaseData> Addconfig()
+        {
+            //yield return new TestCaseData("rahulshettyacademy","learning");
+            //yield return new TestCaseData("rahulshet", "learning");
+            //yield return new TestCaseData("rahulshett", "learning");
+
+            var datafetch = GetdataParser().Extractdata();
+           // var datafetch1 = GetdataParser().ExtractdataArray();
+
+            yield return new TestCaseData(datafetch.username, datafetch.password,datafetch.products);
+            yield return new TestCaseData(datafetch.username_wrong, datafetch.password_wrong,datafetch.products);
+            //yield return new TestCaseData("rahulshett", "learning");
 
         }
     }

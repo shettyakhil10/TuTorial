@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="utilities\NewFolder\**" />
+    <EmbeddedResource Remove="utilities\NewFolder\**" />
+    <None Remove="utilities\NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="DotNetSeleniumExtras.PageObjects" Version="3.11.0" />
     <PackageReference Include="DotNetSeleniumExtras.PageObjects.Core" Version="4.3.0" />
     <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
@@ -20,6 +26,8 @@
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.1" />
     <PackageReference Include="WebDriverManager" Version="2.16.0" />
   </ItemGroup>
+
+  
 
   <Target Name="CopyCustomContent" AfterTargets="AfterBuild">
 
