@@ -32,7 +32,7 @@ namespace TuTorial
         //}
         //[TestCase("rahulshettyacademy", "learning")]
         // [TestCase("rahulshett", "learning")]
-
+        [Parallelizable(ParallelScope.All)]
         [Test, TestCaseSource("Addconfig")]
         public void Test1(string username, string password,string [] expectedproducts)
         {
