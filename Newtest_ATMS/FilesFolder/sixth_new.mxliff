@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8'?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:m="http://www.memsource.com/mxlf/2.0" version="1.2" m:version="2.3" m:level="1" xmlns:a="s3://schema/atms/mxliff">
+<file original="850c5cf5-61b0-4fcb-a73b-90646a0a6945.Article.mv1.bv3.nb-NO.xlf" source-language="en-us" target-language="cs-cz" datatype="x-undefined" m:file-format="XLF" m:task-id="D1m33000d0SOLm6ec_dc2" a:job-part-id="3841103" a:job-part-root-id="3841103">
+<header><a:project-id>2724715</a:project-id><a:task-id>D1m33000d0SOLm6ec_dc2</a:task-id><a:vendor vendor-id="14" vendor-name="Lionbridge"/><a:organization organization-id="14" organization-name="Lionbridge"/><a:mt-engine/><a:tms/></header><body>
+
+<group id="0" m:para-id="0">
+<context-group>
+<context context-type="x-key">2</context>
+<context context-type="x-key-note">x-metadataname: name</context>
+</context-group>
+<trans-unit id="D1m33000d0SOLm6ec_dc2:0" xml:space="preserve" m:score="0.0" m:gross-score="0.0" m:trans-origin="null" m:confirmed="0" m:locked="false" m:para-id="0" m:created-at="0" m:created-by="" m:modified-at="0" m:modified-by="" m:level-edited="false">
+<source>Create product catalog items (project service)</source>
+<target>Opprette produktkatalogelementer (prosjektservice)</target>
+<alt-trans origin="machine-trans"><target/></alt-trans>
+<alt-trans origin="memsource-tm"><target/></alt-trans>
+<count-group name="segment word count">
+<count count-type="repetition">0</count><count count-type="total" phase-name="source">6</count><count count-type="total" phase-name="target">3</count><count count-type="total" phase-name="machine-trans">0</count><count count-type="total" phase-name="memsource-tm">0</count>
+</count-group>
+</trans-unit>
+</group>
+<group id="1" m:para-id="1">
+<context-group>
+<context context-type="x-key">3</context>
+</context-group>
+<trans-unit id="D1m33000d0SOLm6ec_dc2:1" xml:space="preserve" m:score="0.0" m:gross-score="0.0" m:trans-origin="null" m:confirmed="0" m:locked="false" m:para-id="1" m:created-at="0" m:created-by="" m:modified-at="0" m:modified-by="" m:level-edited="false">
+<source>If you want to include products, such as software licenses, on your project quotes and estimates, you need to add each product to the product catalog in {1}.</source>
+<target>Hvis du vil ta med produkter, for eksempel programvarelisenser, i prosjekttilbud og estimater, må du legge til hvert produkt i produktkatalogen i {1}.</target>
+<alt-trans origin="machine-trans"><target/></alt-trans>
+<alt-trans origin="memsource-tm"><target/></alt-trans>
+<count-group name="segment word count">
+<count count-type="repetition">0</count><count count-type="total" phase-name="source">28</count><count count-type="total" phase-name="target">23</count><count count-type="total" phase-name="machine-trans">0</count><count count-type="total" phase-name="memsource-tm">0</count>
+</count-group>
+<m:tunit-metadata>
+<m:mark id="1">
+<m:type>ph</m:type>
+<m:content>&lt;ph xmlns:tilt="urn:logoport:xliffeditor:tilt-non-translatables:1.0" equiv-text="Microsoft Dynamics CRM" tilt:type="do-not-translate" id="1">Microsoft Dynamics CRM&lt;/ph></m:content>
+</m:mark>
+</m:tunit-metadata>
+<m:tunit-target-metadata>
+<m:mark id="1">
+<m:type>ph</m:type>
+<m:content>&lt;ph xmlns:tilt="urn:logoport:xliffeditor:tilt-non-translatables:1.0" equiv-text="Microsoft Dynamics CRM" tilt:type="do-not-translate" id="1">Microsoft Dynamics CRM&lt;/ph></m:content>
+</m:mark>
+</m:tunit-target-metadata>
+</trans-unit>
+</group>
+<group id="2" m:para-id="2">
+<context-group>
+<context context-type="x-key">4</context>
+</context-group>
+<trans-unit id="D1m33000d0SOLm6ec_dc2:2" xml:space="preserve" m:score="0.0" m:gross-score="0.0" m:trans-origin="null" m:confirmed="0" m:locked="false" m:para-id="2" m:created-at="0" m:created-by="" m:modified-at="0" m:modified-by="" m:level-edited="false">
+<source>For more information about adding products to the product catalog, see {1}.</source>
+<target>Hvis du vil ha mer informasjon om å legge til produkter i produktkatalogen, se {1}.</target>
+<alt-trans origin="machine-trans"><target/></alt-trans>
+<alt-trans origin="memsource-tm"><target/></alt-trans>
+<count-group name="segment word count">
+<count count-type="repetition">0</count><count count-type="total" phase-name="source">12</count><count count-type="total" phase-name="target">15</count><count count-type="total" phase-name="machine-trans">0</count><count count-type="total" phase-name="memsource-tm">0</count>
+</count-group>
+<m:tunit-metadata>
+<m:mark id="1">
+<m:type>ph</m:type>
+<m:content>&lt;ph id="1">&amp;lt;link xlink:href="8847977e-3768-4859-bce4-821c259aa79a" xmlns:xlink="http://www.w3.org/1999/xlink"&amp;gt;Create a product&amp;lt;/link&amp;gt;&lt;/ph></m:content>
+</m:mark>
+</m:tunit-metadata>
+<m:tunit-target-metadata>
+<m:mark id="1">
+<m:type>ph</m:type>
+<m:content>&lt;ph id="1">&amp;lt;link xlink:href="8847977e-3768-4859-bce4-821c259aa79a" xmlns:xlink="http://www.w3.org/1999/xlink"&amp;gt;Create a product&amp;lt;/link&amp;gt;&lt;/ph></m:content>
+</m:mark>
+</m:tunit-target-metadata>
+</trans-unit>
+</group>
+</body>
+</file>
+<m:extra>
+<m:users>
+</m:users>
+</m:extra>
+</xliff>

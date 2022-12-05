@@ -1,0 +1,143 @@
+{
+  "id": 11340376,
+  "uid": "8zYKGCku06Ot3yEjz7B7T5",
+  "internalId": 27,
+  "organizationId": 309,
+  "name": "Load test Json",
+  "createdBy": {
+    "id": 36742,
+    "organizationName": "Amazon Devices EMEA"
+  },
+  "dateCreated": "2022-06-09T09:08:59+0000",
+  "dateDue": "2022-06-14T22:00:00+0000",
+  "status": "NEW",
+  "sourceLang": "en_us",
+  "targetLangs": [
+    "cs_cz",
+    "nl_nl",
+    "pl_pl",
+    "pt_pt",
+    "tr_tr"
+  ],
+  "client": null,
+  "buyer": {
+    "name": "Amazon Devices EMEA",
+    "id": 309
+  },
+  "businessUnit": null,
+  "domain": null,
+  "subDomain": null,
+  "note": "The content in this request contains confidential information",
+  "machineTranslateSettings": {
+    "id": 195,
+    "name": "Amazon Translate",
+    "type": "AmazonAws",
+    "includeTags": true,
+    "args": {}
+  },
+  "langSettings": [],
+  "qualityAssuranceSettings": {
+    "emptyTranslation": true,
+    "inconsistentTranslation": true,
+    "joinTags": true,
+    "missingNumbers": true,
+    "segmentNotConfirmed": true,
+    "terminology": true,
+    "multipleSpaces": true,
+    "trailingSpace": false,
+    "trailingPunctuation": true,
+    "targetLength": {
+      "enabled": false,
+      "max": 10000
+    },
+    "formatting": true,
+    "unresolvedComment": true,
+    "emptyPairTags": true,
+    "strictJobStatus": true,
+    "forbiddenStrings": {
+      "enabled": false,
+      "list": []
+    },
+    "excludeLockedSegments": true,
+    "ignoreNotApprovedTerms": false,
+    "spellCheck": true,
+    "repeatedWords": true,
+    "inconsistentTagContent": true,
+    "emptyTagContent": true,
+    "xliffTags": true,
+    "forbiddenTerms": true,
+    "targetLengthPercent": {
+      "enabled": false,
+      "max": 130.0
+    },
+    "targetLengthPerSegment": true,
+    "newerAtPrecedingWorkflowStep": true,
+    "leadingAndTrailingSpaces": true,
+    "ignoreInAllWorkflowSteps": true,
+    "unmodifiedFuzzyTranslation": true,
+    "regexp": null,
+    "targetSourceIdentical": true
+  },
+  "analyseSettings": {
+    "type": "PreAnalyse",
+    "includeFuzzyRepetitions": true,
+    "includeConfirmedSegments": true,
+    "includeNumbers": true,
+    "includeLockedSegments": true,
+    "countSourceUnits": true,
+    "includeTransMemory": true,
+    "compareWorkflowLevel": null,
+    "analyzeByLinguist": false
+  },
+  "preTranslateSettings": {
+    "useTranslationMemory": true,
+    "translationMemoryThreshold": 0.75,
+    "overwrite": false,
+    "preTranslateNonTranslatables": false,
+    "confirmNonTranslatables": false,
+    "confirm100Matches": false,
+    "confirm101Matches": false,
+    "useMachineTranslation": false,
+    "insertMachineTranslationIntoTarget": true,
+    "lock100Matches": false,
+    "lock101Matches": false,
+    "lockNonTranslatables": false,
+    "setJobStatusCompleted": false,
+    "setProjectStatusCompleted": false,
+    "preTranslateOnJobCreation": true,
+    "pseudoTranslateReplacement": "$",
+    "pseudoTranslateIntersperse": false,
+    "pseudoTranslatePrefix": "",
+    "pseudoTranslateSuffix": "",
+    "pseudoTranslateLength": 1.0
+  },
+  "owner": {
+    "id": 36742,
+    "organizationName": "Amazon Devices EMEA"
+  },
+  "costCenter": null,
+  "costCenterId": null,
+  "accessSettings": {
+    "downloadEnabled": false,
+    "webEditorEnabledForLinguists": true,
+    "showUserDataToLinguists": true,
+    "emailNotifications": true,
+    "strictWorkflowFinish": true,
+    "useVendors": true
+  },
+  "businessUnitId": null,
+  "businessUnitName": null,
+  "projectTemplateId": 3514,
+  "projectTemplateName": "All Purposes Template ",
+  "mediaType": "TEXT",
+  "subject": null,
+  "progress": {
+    "totalCount": 20,
+    "finishedCount": 0,
+    "overdueCount": 0
+  },
+  "shared": false,
+  "autoDeletionDateTime": "2022-12-09T09:08:59+0000",
+  "jobCreationAllowed": true
+},
+
